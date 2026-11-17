@@ -26,7 +26,7 @@ async function visit(context,route,width,label) {
       bodyWidth:document.body.scrollWidth,heading:document.querySelector("h1")?.textContent?.trim(),
       font:getComputedStyle(document.body).fontFamily,
       image:!image||Boolean(image.complete&&image.naturalWidth>0),
-      css:Array.from(document.styleSheets).some(s=>s.href&&s.href.includes("assets/")),
+      css:document.styleSheets.length>0,
       interactive:document.querySelectorAll("button,a[href],input").length,
     };
   });

@@ -184,6 +184,16 @@ td .control { min-height: 44px; }
 @media (max-width: 365px) { .signals dd { font-size: .92rem; } }
 @media (prefers-reduced-motion: reduce) { .packet { animation: none; display: none; } }
 
+/* Foundations used by the activity index and header across the whole site. */
+html { font-size: 16px; }
+body { line-height: 1.5; }
+.masthead { display: flex; align-items: center; justify-content: space-between; }
+.masthead > a, .masthead nav a { display: inline-flex; align-items: center; min-height: 44px; }
+.activity-ledger .practical { display: grid; align-items: center; text-decoration: none; }
+.activity-ledger .topic-code, .activity-ledger .topic-name { display: block; }
+.activity-ledger .game-entry { display: grid; gap: .34rem; min-width: 0; }
+.activity-ledger .game-entry strong, .activity-ledger .game-entry > span { display: block; }
+.activity-ledger .game-entry .entry-flag { display: block; }
 /* Shared site and simulation design tokens, typography and layouts */
 /* UNIT / ONE — cohesive editorial/operations design.
    One sans-serif family, restrained colour, visible structure. No stat tiles. */
