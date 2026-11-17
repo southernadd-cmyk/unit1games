@@ -3,99 +3,108 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Playable workplace simulations for Pearson BTEC Level 3 IT Unit 1. Build IT systems, route networks, manage online services and respond to incidents.">
-  <meta name="theme-color" content="#f1ebe0">
-  <title>Unit 1 Games | BTEC Level 3 IT</title>
+  <meta name="description" content="Seven hands-on BTEC Level 3 IT Unit 1 simulations. Make decisions, test systems and explain what happened. No login required.">
+  <meta name="theme-color" content="#132222">
+  <title>Unit One — BTEC IT systems practice</title>
   <link rel="stylesheet" href="assets/styles.css?v=workbook">
+  <link rel="stylesheet" href="assets/art-direction.css?v=2">
   <script src="assets/progress.js?v=workbook" defer></script>
 </head>
 <body class="index-page">
-  <a class="skip" href="#games">Skip to the practical index</a>
+  <a class="skip" href="#games">Skip to the activities</a>
   <header class="site-header">
     <div class="wrap masthead">
-      <a class="brand" href="index.html">Unit 1 Games</a>
+      <a class="brand" href="index.html" aria-label="Unit One home"><span class="brand-mark">UNIT<span>/</span>ONE</span><span class="brand-sub">IT systems practice</span></a>
       <nav aria-label="Main navigation">
-        <a href="#games">Practical index</a>
+        <a href="#games">Activities</a>
         <a href="#teachers">For teachers</a>
+        <a class="nav-download" href="https://github.com/southernadd-cmyk/unit1games/archive/refs/heads/main.zip">Download <span aria-hidden="true">↗</span></a>
       </nav>
     </div>
   </header>
-  <main class="wrap manual">
-    <div class="manual-spread">
-      <header class="manual-cover">
-        <p class="cover-label">Pearson BTEC Level 3 IT · AAQ</p>
-        <h1><span>Information</span> <span>Technology</span> <span>Systems</span></h1>
-        <div class="cover-art">
-          <img src="assets/motherboard.webp" alt="" width="960" height="636" fetchpriority="high">
+  <main>
+    <section class="hero-shell" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="hero-kicker">Pearson BTEC Level 3 IT <span aria-hidden="true">/</span> Unit 1</p>
+          <h1 id="hero-title">IT doesn't<br>run <em>itself.</em></h1>
+          <p class="hero-deck">Networks fail. Hardware has limits. People make mistakes. Step into seven workplace simulations and work out what happens next.</p>
+          <a class="hero-cta" href="games/device-division.html"><span>Start with Device Division</span><span aria-hidden="true">↗</span></a>
+          <p class="hero-smallprint">No login. No setup. Just a browser.</p>
         </div>
-        <a class="offline-link" href="https://github.com/southernadd-cmyk/unit1games/archive/refs/heads/main.zip">Download for offline use <i class="down-arrow" aria-hidden="true"></i></a>
-      </header>
-      <section id="games" class="practical-index" aria-labelledby="games-title">
-        <div class="index-heading">
-          <h2 id="games-title">Practical index</h2>
-          <p>No account needed.</p>
+        <div class="hero-visual">
+          <img src="assets/motherboard.webp" alt="Close-up photograph of a computer motherboard" width="960" height="636" fetchpriority="high">
+          <div class="hero-visual-caption"><span>FIELD NOTES / HARDWARE</span><span>01 — SYSTEMS</span></div>
         </div>
-        <ol class="practical-list">
-          <li class="game-row">
-            <a class="practical" href="games/device-division.html">
-              <span class="topic-code">A1<span class="topic-name">Digital devices</span></span>
-              <span class="game-entry"><strong>Device Division</strong><span>Choose equipment for clients and deal with breakdowns.</span></span>
-              <span class="activity-count" data-briefs="5">5 rounds</span>
-            </a>
-          </li>
-          <li class="game-row" data-game-card="systems">
-            <a class="practical" href="games/play.html?game=systems">
-              <span class="topic-code">A1.3–A5<span class="topic-name">IT systems</span></span>
-              <span class="game-entry"><strong>Systems Workshop</strong><span>Fit hardware, test for bottlenecks and trace a flowchart.</span></span>
-              <span class="activity-count" data-briefs="6">6 builds</span>
-            </a>
-          </li>
-          <li class="game-row" data-game-card="network">
-            <a class="practical" href="games/play.html?game=network">
-              <span class="topic-code">B<span class="topic-name">Networks</span></span>
-              <span class="game-entry"><strong>Packet Route</strong><span>Split traffic across routes and work around failed links.</span></span>
-              <span class="activity-count" data-briefs="5">5 networks</span>
-            </a>
-          </li>
-          <li class="game-row" data-game-card="online">
-            <a class="practical" href="games/play.html?game=online">
-              <span class="topic-code">C<span class="topic-name">Online systems</span></span>
-              <span class="game-entry"><strong>Community Shift</strong><span>Deploy services, assign access and staff a moderation queue.</span></span>
-              <span class="activity-count" data-briefs="3">3 shifts</span>
-            </a>
-          </li>
-          <li class="game-row" data-game-card="security">
-            <a class="practical" href="games/play.html?game=security">
-              <span class="topic-code">D<span class="topic-name">Data protection</span></span>
-              <span class="game-entry"><strong>Defence Desk</strong><span>Contain an incident, restore a backup and verify the service.</span></span>
-              <span class="activity-count" data-briefs="5">5 incidents</span>
-            </a>
-          </li>
-          <li class="game-row" data-game-card="services">
-            <a class="practical" href="games/play.html?game=services">
-              <span class="topic-code">E<span class="topic-name">Online services</span></span>
-              <span class="game-entry"><strong>Service Launch</strong><span>Set rules for a booking form and try your own test data.</span></span>
-              <span class="activity-count" data-briefs="4">4 forms</span>
-            </a>
-          </li>
-          <li class="game-row" data-game-card="policy">
-            <a class="practical" href="games/play.html?game=policy">
-              <span class="topic-code">F<span class="topic-name">Ethics and law</span></span>
-              <span class="game-entry"><strong>Policy Files</strong><span>Redact a public export, allocate licences and plan equipment disposal.</span></span>
-              <span class="activity-count" data-briefs="7">7 files</span>
-            </a>
-          </li>
-        </ol>
-      </section>
+      </div>
+    </section>
+    <div class="working-strip">
+      <div class="wrap working-strip-inner"><strong>Not another multiple-choice worksheet.</strong><span>Inspect the system <i></i> Make a decision <i></i> Test the result <i></i> Explain why</span></div>
     </div>
-    <section id="teachers" class="teaching-notes" aria-labelledby="teacher-title">
-      <h2 id="teacher-title">For teachers</h2>
-      <div>
-        <p>Share the URL of an individual game or let students choose a brief. Completed briefs include a written task for the class notebook. Progress is saved in the browser.</p>
-        <p>To run the downloaded games offline, extract the ZIP and open <code>index.html</code> in Edge or Chrome. Keep the folders together.</p>
-        <a href="https://qualifications.pearson.com/content/dam/pdf/btec-aaqs/information-technology/2025/specification-and-sample-assessments/btec-level-3-national-ext-cert-in-it-aaq-spec.pdf">Pearson Unit 1 specification (PDF)</a>
+    <section class="activity-section wrap" id="games" aria-labelledby="games-title">
+      <header class="activity-intro">
+        <div><p class="section-kicker">THE WORK / SEVEN INTERACTIVE ACTIVITIES</p><h2 id="games-title">Choose your<br>next problem.</h2></div>
+        <p>Each activity gives you something to change or investigate. Work through the briefs, check your decisions, then use the written prompt to explain your thinking in your class notebook.</p>
+      </header>
+      <ol class="activity-ledger">
+        <li class="game-row game-row-feature">
+          <a class="practical" href="games/device-division.html">
+            <span class="topic-code">A1<span class="topic-name">Digital devices</span></span>
+            <span class="game-entry"><span class="entry-flag">A GOOD PLACE TO START</span><strong>Device Division</strong><span>Choose equipment for real-world clients. Work within a budget. Handle breakdowns.</span></span>
+            <span class="activity-meta"><span class="activity-count">5 rounds</span><span class="activity-arrow" aria-hidden="true">↗</span></span>
+          </a>
+        </li>
+        <li class="game-row" data-game-card="systems">
+          <a class="practical" href="games/play.html?game=systems">
+            <span class="topic-code">A1.3–A5<span class="topic-name">IT systems</span></span>
+            <span class="game-entry"><strong>Systems Workshop</strong><span>Assemble a working system. Find the bottleneck before it goes live.</span></span>
+            <span class="activity-meta"><span class="activity-count" data-briefs="6">6 builds</span><span class="activity-arrow" aria-hidden="true">↗</span></span>
+          </a>
+        </li>
+        <li class="game-row" data-game-card="network">
+          <a class="practical" href="games/play.html?game=network">
+            <span class="topic-code">B<span class="topic-name">Transmitting data</span></span>
+            <span class="game-entry"><strong>Packet Route</strong><span>Move traffic across a network. Find a way around congestion and outages.</span></span>
+            <span class="activity-meta"><span class="activity-count" data-briefs="5">5 networks</span><span class="activity-arrow" aria-hidden="true">↗</span></span>
+          </a>
+        </li>
+        <li class="game-row" data-game-card="online">
+          <a class="practical" href="games/play.html?game=online">
+            <span class="topic-code">C<span class="topic-name">Operating online</span></span>
+            <span class="game-entry"><strong>Community Shift</strong><span>Run an online platform. Decide who gets access and manage the pressure.</span></span>
+            <span class="activity-meta"><span class="activity-count" data-briefs="3">3 shifts</span><span class="activity-arrow" aria-hidden="true">↗</span></span>
+          </a>
+        </li>
+        <li class="game-row" data-game-card="security">
+          <a class="practical" href="games/play.html?game=security">
+            <span class="topic-code">D<span class="topic-name">Protecting data</span></span>
+            <span class="game-entry"><strong>Defence Desk</strong><span>Investigate an incident. Contain the damage and get essential services back.</span></span>
+            <span class="activity-meta"><span class="activity-count" data-briefs="5">5 incidents</span><span class="activity-arrow" aria-hidden="true">↗</span></span>
+          </a>
+        </li>
+        <li class="game-row" data-game-card="services">
+          <a class="practical" href="games/play.html?game=services">
+            <span class="topic-code">E<span class="topic-name">Impact of IT</span></span>
+            <span class="game-entry"><strong>Service Launch</strong><span>Build the rules for a booking form. Try to break it with your own test data.</span></span>
+            <span class="activity-meta"><span class="activity-count" data-briefs="4">4 forms</span><span class="activity-arrow" aria-hidden="true">↗</span></span>
+          </a>
+        </li>
+        <li class="game-row" data-game-card="policy">
+          <a class="practical" href="games/play.html?game=policy">
+            <span class="topic-code">F<span class="topic-name">Ethics and law</span></span>
+            <span class="game-entry"><strong>Policy Files</strong><span>Make the difficult calls: personal data, permissions, licences and disposal.</span></span>
+            <span class="activity-meta"><span class="activity-count" data-briefs="7">7 files</span><span class="activity-arrow" aria-hidden="true">↗</span></span>
+          </a>
+        </li>
+      </ol>
+    </section>
+    <section class="teacher-band" id="teachers" aria-labelledby="teacher-title">
+      <div class="wrap teacher-grid">
+        <div><p class="section-kicker">A NOTE FOR TEACHERS</p><h2 id="teacher-title">Use one brief.<br>Or run the shift.</h2></div>
+        <div class="teacher-copy"><p>Share a direct activity link or let students pick a brief. The simulations practise selected parts of Unit 1; they do not replace the specification. Students can use the final written prompts in their class notebook.</p><p>Completion is saved in that browser when local storage is available. For offline lessons, download the ZIP, extract it and open <code>index.html</code> in Edge or Chrome.</p><div class="teacher-links"><a href="https://qualifications.pearson.com/content/dam/pdf/btec-aaqs/information-technology/2025/specification-and-sample-assessments/btec-level-3-national-ext-cert-in-it-aaq-spec.pdf">Pearson specification <span aria-hidden="true">↗</span></a><a href="https://github.com/southernadd-cmyk/unit1games/archive/refs/heads/main.zip">Download offline files <span aria-hidden="true">↗</span></a></div></div>
       </div>
     </section>
   </main>
+  <footer class="site-footer"><div class="wrap footer-inner"><strong>UNIT/ONE</strong><span>BTEC Level 3 Information Technology Systems</span><a href="#games">Back to activities ↑</a></div></footer>
 </body>
 </html>

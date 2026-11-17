@@ -1,0 +1,177 @@
+/* UNIT / ONE — cohesive editorial/operations design.
+   One sans-serif family, restrained colour, visible structure. No stat tiles. */
+:root {
+  --ink: #132222;
+  --muted: #53615c;
+  --paper: #f2f1eb;
+  --sheet: #fcfcf7;
+  --rule: #c4cec6;
+  --hard-rule: #132222;
+  --blue: #205b47;
+  --yellow: #d9ef79;
+  --red: #a33e29;
+  --green: #235b44;
+  --selected: #e6eedb;
+  font-family: "Instrument Sans", "Segoe UI", Arial, sans-serif;
+  background: var(--paper);
+}
+html { scroll-behavior: smooth; }
+body { background: var(--paper); }
+a, button { -webkit-tap-highlight-color: transparent; }
+:focus-visible { outline: 3px solid #63823c; outline-offset: 3px; }
+.site-header { background: var(--sheet); box-shadow: none; border-bottom: 1px solid #bdc6bd; }
+.masthead { min-height: 70px; gap: 1rem; }
+.masthead .brand { display: inline-flex; gap: 1.1rem; align-items: baseline; color: var(--ink); text-decoration: none; }
+.brand-mark { font-size: 1.25rem; font-weight: 800; letter-spacing: -.075em; white-space: nowrap; }
+.brand-mark > span { color: #719441; padding-inline: .03em; }
+.brand-sub { border-left: 1px solid #c3ccc3; padding-left: 1rem; font-size: .76rem; font-weight: 500; letter-spacing: .005em; color: var(--muted); }
+.masthead nav { display: flex; gap: 1.6rem; font-size: .88rem; font-weight: 650; }
+.masthead nav a { text-decoration: none; }
+.masthead nav a:hover { text-decoration: underline; text-underline-offset: .25rem; }
+.nav-download { display: inline-flex; gap: .45rem; white-space: nowrap; }
+.nav-download span { font-size: 1.02em; }
+.index-page .wrap { width: min(1270px, calc(100% - 4.25rem)); }
+.hero-shell { background: #132222; color: #f2f4eb; }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1.04fr) minmax(0, .96fr); min-height: 500px; align-items: stretch; }
+.hero-copy { display: flex; flex-direction: column; align-items: start; justify-content: center; padding: 3.4rem 3.5rem 3.4rem 0; }
+.hero-kicker, .section-kicker { font-size: .77rem; font-weight: 750; text-transform: uppercase; letter-spacing: .09em; line-height: 1.5; }
+.hero-kicker { color: #b4d595; }
+.hero-kicker span { display: inline-block; padding-inline: .55rem; opacity: .65; }
+.hero-copy h1 { margin-top: 1.25rem; font-size: clamp(3.75rem, 6.4vw, 7.35rem); font-weight: 750; line-height: .93; letter-spacing: -.065em; }
+.hero-copy h1 em { color: var(--yellow); font-style: normal; }
+.hero-deck { margin-top: 1.9rem; max-width: 34rem; font-size: clamp(1.06rem, 1.6vw, 1.24rem); line-height: 1.5; color: #d5dcd2; }
+.hero-cta { display: inline-flex; align-items: center; justify-content: space-between; gap: 2.3rem; min-height: 56px; min-width: min(100%, 21rem); padding: .8rem 1.1rem; margin-top: 2rem; text-decoration: none; font-weight: 750; font-size: .98rem; color: #152322; background: var(--yellow); transition: background .16s ease, transform .16s ease; }
+.hero-cta:hover { background: #edfcad; transform: translateY(-2px); }
+.hero-cta span:last-child { font-size: 1.3rem; }
+.hero-smallprint { margin-top: 1rem; font-size: .8rem; color: #b4c1b7; }
+.hero-visual { min-height: 100%; position: relative; overflow: hidden; background: #394942; }
+.hero-visual::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(0deg,#101d1ca8 0%,transparent 28%,transparent 72%,#101d1c38 100%); pointer-events: none; }
+.hero-visual img { display: block; width: 100%; height: 100%; min-height: 500px; object-fit: cover; object-position: 47% center; filter: grayscale(1) contrast(1.2) brightness(.83); }
+.hero-visual-caption { position: absolute; z-index: 2; bottom: 1.5rem; left: 1.6rem; right: 1.6rem; display: flex; flex-wrap: wrap; gap: .3rem 1rem; justify-content: space-between; border-top: 1px solid #e1e6d3b0; padding-top: .7rem; font: 650 .72rem/1.3 var(--mono); letter-spacing: .05em; color: #f5f5e8; }
+.working-strip { background: var(--yellow); border-bottom: 1px solid #aac26b; }
+.working-strip-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .5rem 1rem; min-height: 65px; padding-block: .8rem; }
+.working-strip strong { font-size: .94rem; font-weight: 750; letter-spacing: -.015em; }
+.working-strip span { display: flex; flex-wrap: wrap; align-items: baseline; gap: .35rem .7rem; font-size: .83rem; font-weight: 600; }
+.working-strip i { display: inline-block; width: 2px; height: 2px; border-radius: 50%; background: var(--ink); vertical-align: middle; }
+.activity-section { padding-block: 5rem 5.5rem; scroll-margin-top: 1rem; }
+.activity-intro { display: grid; grid-template-columns: minmax(0,1.2fr) minmax(0,.8fr); align-items: end; gap: 2rem; margin-bottom: 2.1rem; }
+.section-kicker { color: #4c6950; }
+.activity-intro h2, .teacher-grid h2 { font-size: clamp(2.8rem, 5.3vw, 5.7rem); font-weight: 730; line-height: .98; letter-spacing: -.059em; margin-top: .75rem; }
+.activity-intro > p { max-width: 33rem; color: var(--muted); line-height: 1.55; font-size: 1.01rem; padding-bottom: .25rem; }
+.activity-ledger { list-style: none; padding: 0; margin: 0; border-top: 2px solid var(--ink); }
+.activity-ledger .game-row { border-bottom: 1px solid #b7c5bb; }
+.activity-ledger .game-row:last-child { border-color: var(--ink); }
+.activity-ledger .practical { grid-template-columns: minmax(7.3rem, 16%) minmax(0,1fr) minmax(5.7rem, 11%); gap: 1.2rem; min-height: 108px; padding: 1.3rem 1.25rem 1.3rem .8rem; transition: background .15s ease; }
+.activity-ledger .practical:hover, .activity-ledger .practical:focus-visible { background: #e7eede; }
+.activity-ledger .topic-code { color: #304d42; font: 750 .98rem/1.2 "Instrument Sans", "Segoe UI", sans-serif; }
+.activity-ledger .topic-name { margin-top: .4rem; color: var(--muted); font-size: .8rem; font-weight: 500; line-height: 1.3; }
+.activity-ledger .game-entry { gap: .34rem; }
+.activity-ledger .game-entry strong { font-size: clamp(1.45rem, 2.55vw, 2.2rem); font-weight: 740; letter-spacing: -.05em; text-decoration: none; line-height: 1.07; }
+.activity-ledger .practical:hover .game-entry strong { text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: .19em; color: var(--ink); }
+.activity-ledger .game-entry > span:last-child { color: #475851; font-size: .92rem; line-height: 1.45; }
+.activity-ledger .activity-meta { display: flex; flex-direction: column; justify-content: space-between; align-items: end; min-height: 3.4rem; gap: .3rem; }
+.activity-ledger .activity-count { font-size: .78rem; white-space: normal; text-align: right; color: #536459; }
+.activity-arrow { font-size: 1.45rem; line-height: 1; transition: transform .15s ease; }
+.practical:hover .activity-arrow { transform: translate(3px, -3px); }
+.activity-ledger .game-row-feature { background: #e4eecf; border-bottom: 1px solid var(--ink); }
+.activity-ledger .game-row-feature .practical { min-height: 149px; }
+.activity-ledger .game-row-feature .practical:hover { background: #d9e9ba; }
+.entry-flag { color: #376147; font: 800 .7rem/1.3 var(--mono); letter-spacing: .055em; }
+.teacher-band { background: #dce3da; border-top: 1px solid #bdc7bf; padding-block: 4rem 4.3rem; scroll-margin-top: .8rem; }
+.teacher-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem 4rem; }
+.teacher-grid h2 { font-size: clamp(2.4rem, 4.25vw, 4.4rem); }
+.teacher-copy { padding-top: .35rem; max-width: 40rem; }
+.teacher-copy p { line-height: 1.6; font-size: 1rem; }
+.teacher-copy p + p { margin-top: 1rem; }
+.teacher-copy code { background: #cbd5c9; padding: 0 .15rem; font-family: var(--mono); font-size: .85em; }
+.teacher-links { display: flex; flex-wrap: wrap; gap: .6rem 2rem; margin-top: 1.5rem; }
+.teacher-links a { font-weight: 750; text-underline-offset: .2rem; }
+.site-footer { background: #132222; color: #e8ecdf; }
+.footer-inner { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: .5rem 1rem; padding-block: 1.7rem; }
+.footer-inner strong { font-weight: 800; letter-spacing: -.045em; }
+.footer-inner span { color: #b7c6b8; font-size: .86rem; }
+.footer-inner a { font-size: .87rem; text-underline-offset: .2rem; }
+/* Simulation workspaces: the same visual language, with controls still functional. */
+.simulation-page .play-page { padding-block: 1.5rem 4rem; }
+.simulation-page .play-header { background: #132222; color: #f6f7ed; border-bottom: 0; padding: 2rem 2.25rem; margin-bottom: 1.7rem; grid-template-columns: minmax(0, 1fr) minmax(13rem, .58fr); gap: .6rem 2rem; align-items: end; }
+.simulation-page .course-topic { color: #d9ef79; font-size: .79rem; text-transform: uppercase; letter-spacing: .065em; font-weight: 700; }
+.simulation-page .play-header h1 { font-size: clamp(2.6rem, 5vw, 4.9rem); font-weight: 750; line-height: 1; letter-spacing: -.056em; }
+.simulation-page .play-header > p:last-child { color: #d7dfd2; font-size: 1rem; line-height: 1.55; }
+.simulation-page .station-layout { grid-template-columns: minmax(11rem, 20%) minmax(0, 1fr); gap: 2rem; }
+.simulation-page .mission-menu { padding: .1rem 1.05rem 0 0; border-right: 1px solid #b4c4b9; }
+.simulation-page .menu-header { border-bottom: 2px solid var(--hard-rule); padding: 0 0 .85rem; }
+.simulation-page .menu-header strong { font-weight: 750; }
+.simulation-page .mission-tab { min-height: 50px; padding: .65rem .4rem .65rem .2rem; gap: .4rem; font-size: .89rem; }
+.simulation-page .mission-tab[aria-current] { color: #164e3b; box-shadow: inset 3px 0 #67904d; padding-left: .65rem; background: #e5eddb; }
+.simulation-page .mission-tab:hover > span:first-child { color: #1d5b43; }
+.simulation-page .brief { padding: .2rem 0 1.2rem; border-bottom: 2px solid var(--ink); }
+.simulation-page .brief h2 { font-size: clamp(1.75rem, 3.3vw, 2.6rem); font-weight: 740; letter-spacing: -.045em; }
+.simulation-page .brief p { font-size: 1rem; line-height: 1.6; color: #44534c; }
+.simulation-page .station-body { padding-top: 1.3rem; }
+.simulation-page .panel { padding-top: .85rem; border-top-color: #bac8bc; }
+.simulation-page .panel h3 { font-size: 1.11rem; letter-spacing: -.01em; }
+.simulation-page .control { background: #f8faf2; border-color: #a8b9ac; border-radius: 2px; font-weight: 680; }
+.simulation-page .control:hover:not(:disabled) { border-color: #234b37; background: #e6eedd; }
+.simulation-page .control[aria-pressed="true"] { color: #1b4935; border-color: #3d7151; background: #dfeaca; }
+.simulation-page .control.primary { color: #eff7e4; background: #204d3c; border-color: #204d3c; }
+.simulation-page .control.primary:hover:not(:disabled) { background: #123728; color: #fff; }
+.simulation-page .bay, .simulation-page .stock { background: #f6f6f0; border-color: #bfc8bc; border-radius: 0; }
+.simulation-page .bay.active, .simulation-page .stock.active { background: #e5eedb; }
+.simulation-page .hardware-bench .bay { background: #293a55; border-color: #8793a4; }
+.simulation-page .hardware-bench .bay.active { background: #364769; border-color: #e6eaa4; }
+.simulation-page .notice, .simulation-page .debrief { padding: .8rem .95rem; }
+.simulation-page .debrief { background: #e6efdb; }
+.simulation-page .case-material, .simulation-page .form-proof { border-radius: 0; }
+@media (max-width: 940px) {
+  .index-page .wrap { width: calc(100% - 2.4rem); }
+  .hero-grid { min-height: 450px; }
+  .hero-copy { padding-right: 1.8rem; }
+  .hero-copy h1 { font-size: clamp(3.2rem, 7vw, 5.7rem); }
+  .hero-visual img { min-height: 450px; }
+  .simulation-page .station-layout { grid-template-columns: 1fr; gap: 1.4rem; }
+  .simulation-page .mission-menu { position: static; padding: 0 0 .85rem; border-right: 0; border-bottom: 1px solid var(--rule); }
+  .simulation-page .mission-menu ul { display: flex; gap: .2rem .55rem; overflow-x: auto; flex-wrap: nowrap; padding-bottom: .2rem; scrollbar-width: thin; }
+  .simulation-page .mission-menu li { border: 0; flex: 0 0 auto; }
+  .simulation-page .mission-tab { padding: .6rem .75rem; border-bottom: 2px solid transparent; white-space: nowrap; }
+  .simulation-page .mission-tab[aria-current] { box-shadow: none; border-bottom-color: #285440; padding-left: .75rem; }
+}
+@media (max-width: 700px) {
+  .masthead { min-height: 60px; }
+  .brand-sub, .masthead .nav-download { display: none; }
+  .masthead nav { gap: 1.1rem; }
+  .index-page .wrap { width: calc(100% - 1.5rem); }
+  .hero-grid { display: flex; flex-direction: column; min-height: 0; }
+  .hero-copy { padding: 3rem .1rem 2.4rem; }
+  .hero-copy h1 { font-size: clamp(3.7rem, 12.5vw, 6rem); margin-top: 1.1rem; }
+  .hero-deck { margin-top: 1.5rem; }
+  .hero-visual { min-height: 210px; max-height: 280px; }
+  .hero-visual img { min-height: 210px; height: 280px; }
+  .hero-visual-caption { bottom: 1rem; left: 1rem; right: 1rem; }
+  .working-strip-inner { gap: .35rem; padding-block: .95rem; }
+  .working-strip span { font-size: .78rem; }
+  .activity-section { padding-block: 3.4rem 3.7rem; }
+  .activity-intro { grid-template-columns: 1fr; gap: 1rem; margin-bottom: 1.8rem; }
+  .activity-intro h2 { font-size: clamp(3rem, 10vw, 4.5rem); }
+  .activity-ledger .practical { grid-template-columns: 4.5rem minmax(0,1fr) 2rem; gap: .75rem; min-height: 108px; padding: 1.25rem .35rem 1.25rem .1rem; }
+  .activity-ledger .game-row-feature .practical { min-height: 142px; }
+  .activity-ledger .game-entry strong { font-size: clamp(1.35rem, 5.8vw, 2rem); }
+  .activity-ledger .game-entry > span:last-child { font-size: .84rem; }
+  .activity-ledger .activity-meta { align-items: end; justify-content: center; min-height: 0; }
+  .activity-ledger .activity-count { display: none; }
+  .activity-ledger .topic-code { font-size: .86rem; }
+  .activity-ledger .topic-name { font-size: .73rem; overflow-wrap: normal; }
+  .teacher-band { padding-block: 3rem; }
+  .teacher-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .footer-inner { align-items: start; }
+  .footer-inner span { width: 100%; }
+  .simulation-page .play-header { grid-template-columns: 1fr; padding: 1.5rem 1.15rem; gap: .6rem; }
+  .simulation-page .play-header h1 { font-size: clamp(2.45rem, 9vw, 3.5rem); }
+  .simulation-page .mission-tab { white-space: normal; text-align: left; max-width: 15rem; }
+  .simulation-page .brief { display: block; }
+  .simulation-page .brief > .control { margin-top: .7rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .hero-cta, .activity-arrow, .activity-ledger .practical { transition: none; }
+  .hero-cta:hover { transform: none; }
+}
