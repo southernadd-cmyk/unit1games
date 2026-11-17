@@ -326,7 +326,11 @@ a, button { -webkit-tap-highlight-color: transparent; }
   .hero-copy { padding-right: 1.8rem; }
   .hero-copy h1 { font-size: clamp(3.2rem, 7vw, 5.7rem); }
   .hero-visual img { min-height: 450px; }
-  .simulation-page .station-layout { grid-template-columns: 1fr; gap: 1.4rem; }
+  .simulation-page .station-layout { grid-template-columns: minmax(0,1fr); gap: 1.4rem; }
+  .simulation-page .mission-menu, .simulation-page .station, .simulation-page .station-body, .simulation-page .hardware-layout { min-width:0; max-width:100%; }
+  .simulation-page .mission-menu ul { min-width:0; max-width:100%; }
+  .simulation-page .stock-grid, .simulation-page .bay-grid { min-width:0; max-width:100%; }
+  .simulation-page .stock b, .simulation-page .bay strong { overflow-wrap:anywhere; }
   .simulation-page .mission-menu { position: static; padding: 0 0 .85rem; border-right: 0; border-bottom: 1px solid var(--rule); }
   .simulation-page .mission-menu ul { display: flex; gap: .2rem .55rem; overflow-x: auto; flex-wrap: nowrap; padding-bottom: .2rem; scrollbar-width: thin; }
   .simulation-page .mission-menu li { border: 0; flex: 0 0 auto; }
