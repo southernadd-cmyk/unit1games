@@ -130,12 +130,13 @@
         '<b class="'+(test.ok?"good-text":"bad-text")+'">'+(test.ok?"Pass":"Fail")+'</b>'
       ]),"Form tests")+(mission.formats?checklist([[readyFormat(draft),"Data and interface review",
         "The survey needs fresh primary data, labels and written error prompts."]]):"")):"";
-    return panel("Form builder",'<div class="bay-grid">'+slots+"</div>")+
-      panel("Rule tray · "+title,'<div class="stock-grid">'+rulePanel+'</div>')+format+
-      panel("Live form preview",'<p>Try your own values. The preview uses the rules fitted above.</p><div class="fields">'+preview+
+    return '<div class="validation-layout"><div class="validation-builder">'+
+      panel("Form builder",'<div class="bay-grid">'+slots+"</div>","field-board")+
+      panel("Rule tray · "+title,'<div class="stock-grid">'+rulePanel+'</div>',"rule-tray")+format+"</div>"+
+      panel("Live form preview",'<p>Try your own values using the rules you fitted.</p><div class="fields">'+preview+
         '</div><div class="controls">'+control("attempt","Try submission")+'</div>'+
         (draft.preview?checklist([[!draft.preview.length,draft.preview.length?"Record withheld":"Record accepted",
-          draft.preview.length?(mission.formats&&!draft.format.errors?"The form marks fields without saying what to change.":draft.preview.map(error=>error[1]).join(" · ")):"The entered record passed every fitted rule."]]):""))+
+          draft.preview.length?(mission.formats&&!draft.format.errors?"The form marks fields without saying what to change.":draft.preview.map(error=>error[1]).join(" · ")):"The entered record passed every fitted rule."]]):""),"form-proof")+"</div>"+
       '<div class="controls">'+control("suite","Run release tests",{},{main:true})+'</div>'+report;
   }
 

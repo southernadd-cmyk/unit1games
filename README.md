@@ -23,3 +23,7 @@ Download the [source ZIP](https://github.com/southernadd-cmyk/unit1games/archive
 ## Edit or publish
 
 The six simulation modules are in assets/games/. Each defines its briefs, state changes, workspace and checks. The player in assets/play.js provides the brief menu and interaction wiring. Device Division is a standalone HTML game. The Pages workflow publishes the static assets from main.
+
+## Artwork and type
+
+The cover uses [Computer Motherboard Closeup](https://commons.wikimedia.org/wiki/File:Computer_Motherboard_Closeup.jpg) by Lenharth Systems (CC0). The typefaces are Instrument Serif and Instrument Sans, distributed under the SIL Open Font License. The license files are in assets/type/.

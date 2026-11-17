@@ -17,7 +17,7 @@ function openStation(id, station) {
       const current = i === index;
       return '<li><button type="button" class="mission-tab" data-act="mission" data-index="' + i +
         '" data-focus="mission:' + i + '"' + (current ? ' aria-current="step"' : "") + "><span>" +
-        h(entry.title) + "</span>" + (completed.has(entry.id) ? '<span aria-label="Cleared">✓</span>' : "") + "</button></li>";
+        h(entry.title) + "</span>" + (completed.has(entry.id) ? '<span class="brief-done">Done</span>' : "") + "</button></li>";
     }).join("");
     const next = index < station.missions.length - 1 ? control("next", "Next brief", {}, {main: true}) : "";
     workspace.innerHTML =
@@ -25,7 +25,7 @@ function openStation(id, station) {
       "</h1><p>" + h(station.intro) + '</p></div>' +
       '<div class="station-layout"><nav class="mission-menu" aria-label="Briefs"><div class="menu-header"><strong>Briefs</strong><span>' +
       completed.size + "/" + station.missions.length + ' cleared</span></div><ul>' + menu + '</ul></nav>' +
-      '<article class="station"><header class="brief"><div><h2 id="current-brief" tabindex="-1">' + h(mission.title) +
+      '<article class="station station-' + id + '"><header class="brief"><div><h2 id="current-brief" tabindex="-1">' + h(mission.title) +
       "</h2><p>" + h(mission.brief) + '</p></div>' +
       control("reset", "Reset brief") + '</header><div class="station-body">' + station.view(mission, draft) +
       (draft.message ? '<div id="report" class="notice ' + (draft.passed ? "good" : "alert") +

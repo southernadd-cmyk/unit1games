@@ -186,7 +186,7 @@
   function start(file){return { values:structuredClone(file.initial), report:null, passed:false };}
 
   function view(file,draft) {
-    return file.artefact(draft.values)+
+    return '<div class="case-material">'+file.artefact(draft.values)+"</div>"+
       '<div class="controls">'+control("review","Submit for review",{},{main:true})+"</div>"+
       (draft.report?panel("Review findings",checklist(draft.report)):"")+
       (file.ref?'<p class="source-line"><a href="'+h(file.ref[1])+'" target="_blank" rel="noopener">'+h(file.ref[0])+' ↗</a></p>':"");

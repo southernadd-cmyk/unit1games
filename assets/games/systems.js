@@ -178,8 +178,10 @@
     ).join("");
     const budget = mission.budget === undefined ? [] : [["Spent", pounds(price), price > mission.budget ? "fault" : ""], ["Budget", pounds(mission.budget)]];
     return signals([["Bays fitted", Object.keys(draft.installed).length + "/" + mission.slots.length], ...budget]) +
-      panel("Build bench", '<div class="bay-grid">' + bays + "</div>") +
-      panel("Stock for " + mission.slots.find(([slot]) => slot === draft.open)[1], '<div class="stock-grid">' + stock + "</div>") +
+      '<div class="hardware-layout">' +
+      panel("Build bench", '<div class="bay-grid">' + bays + "</div>", "hardware-bench") +
+      panel("Stock for " + mission.slots.find(([slot]) => slot === draft.open)[1],
+        '<div class="stock-grid">' + stock + "</div>", "part-tray") + "</div>" +
       '<div class="controls">' + control("bench", mission.budget === undefined ? "Run both traces" : "Power on and test", {}, {main: true}) + "</div>" +
       (draft.tests ? panel("Bench test", checklist(draft.tests)) : "");
   }

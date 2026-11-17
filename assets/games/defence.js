@@ -164,9 +164,9 @@
     const logs=draft.log.length?'<ol class="event-log">'+draft.log.slice().reverse().map(([time,event])=>
       '<li><time>+'+time+' min</time><span>'+h(event)+'</span></li>').join("")+'</ol>':'<p>No actions recorded.</p>';
     return signals([["Elapsed",draft.clock+" min"],...incident.metrics(draft)])+
-      panel("Systems and evidence",'<div class="stock-grid">'+cards+'</div>')+
-      panel(entry.name,'<p>'+h(entry.evidence)+'</p><div class="controls">'+moves+'</div>')+
-      panel("Activity log",logs)+
+      panel("Systems and evidence",'<div class="stock-grid">'+cards+'</div>',"asset-register")+
+      '<div class="incident-layout">'+panel(entry.name,'<p>'+h(entry.evidence)+'</p><div class="controls">'+moves+'</div>',"incident-evidence")+
+      panel("Activity log",logs,"incident-log")+"</div>"+
       '<div class="controls">'+control("handover","Run handover checks",{},{main:true})+'</div>'+
       (draft.report?panel("Handover",checklist(draft.report)):"");
   }

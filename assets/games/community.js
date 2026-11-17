@@ -107,11 +107,12 @@
       h(entry.name) + "</b><p>" + h(products[draft.systems[i]]?.name ?? "Awaiting deployment") + "</p></div>").join("");
     return signals([["Spend",pounds(used.cost) + " / " + pounds(mission.budget),used.cost>mission.budget?"fault":""],
       ["Staff rota", used.hours + " / " + mission.hours + " hours",used.hours>mission.hours?"fault":""]]) +
-      panel("Services board",'<div class="bay-grid">' + cards + '</div><div class="controls">' + taskTabs + "</div>") +
+      panel("Services board",'<div class="bay-grid">' + cards + '</div><div class="controls">' + taskTabs + "</div>", "service-board") +
+      '<div class="deployment-layout">' +
       panel(task.name, "<p>" + h(task.need) + "</p><p>Peak load · " + task.load + "</p>" +
-        '<div class="stock-grid">' + services + "</div>") +
-      panel("Access control", "<p>Click a permission to cycle Blocked → View → Edit.</p>" +
-        table(["Role","Brief","Set permission"],levels,"Role permissions")) +
+        '<div class="stock-grid">' + services + "</div>", "service-catalogue") +
+      panel("Access control", "<p>Click a permission to cycle Blocked, View and Edit.</p>" +
+        table(["Role","Brief","Set permission"],levels,"Role permissions"), "role-ledger") + "</div>" +
       (mission.reports ? panel("Moderation rota",signals([["Flagged posts",mission.reports],["Moderator hours",draft.hours],["Review capacity",draft.hours*3]]) +
         '<div class="controls">' + control("staff","Assign one hour",{delta:1},{disabled:draft.hours>=mission.hours}) +
         control("staff","Remove one hour",{delta:-1},{disabled:draft.hours===0}) + "</div>") : "") +

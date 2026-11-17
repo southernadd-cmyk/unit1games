@@ -151,8 +151,11 @@
     const links = circuit.links.map(([a,b,speed,delay,kind,status],i) =>
       [h(node(circuit,a)[1] + " ↔ " + node(circuit,b)[1]), h(kind + (status === "down" ? " · offline" : status === "guest" ? " · guest" : "")),
         '<span class="' + (total[i] > speed || status === "down" ? "bad-text" : "") + '">' + total[i] + " / " + speed + " Mb/s</span>", delay + " ms"]);
-    return panel("Route the streams", streams + mapMarkup(circuit,draft,total)) +
-      panel("Link load", table(["Connection", "Medium", "Allocated / capacity", "Delay"], links, "Link load")) +
+    const key = '<ul class="wire-key"><li><i class="key-active"></i>Active route</li>' +
+      '<li><i class="key-crowded"></i>Over capacity</li><li><i class="key-down"></i>Offline link</li></ul>';
+    return '<div class="network-layout">' + panel("Network map", mapMarkup(circuit,draft,total) + key, "wiring-map") +
+      panel("Route the streams", streams, "route-console") + "</div>" +
+      panel("Link load", table(["Connection", "Medium", "Allocated / capacity", "Delay"], links, "Link load"), "link-ledger") +
       '<div class="controls">' + control("send", "Run simultaneous traffic", {}, {main:true}) + "</div>" +
       (draft.result ? panel("Traffic report", checklist(draft.result)) : "");
   }
