@@ -311,6 +311,8 @@ a, button { -webkit-tap-highlight-color: transparent; }
 .simulation-page .control { background: #f8faf2; border-color: #a8b9ac; border-radius: 2px; font-weight: 680; }
 .simulation-page .control:hover:not(:disabled) { border-color: #234b37; background: #e6eedd; }
 .simulation-page .control[aria-pressed="true"] { color: #1b4935; border-color: #3d7151; background: #dfeaca; }
+.simulation-page .brief > .control { background: transparent; border: 0; color: #205b47; padding-inline: 0; min-height: 44px; font-size: .91rem; text-decoration: underline; text-underline-offset: .18em; }
+.simulation-page .brief > .control:hover:not(:disabled) { background: transparent; border: 0; color: #132e25; }
 .simulation-page .control.primary { color: #eff7e4; background: #204d3c; border-color: #204d3c; }
 .simulation-page .control.primary:hover:not(:disabled) { background: #123728; color: #fff; }
 .simulation-page .bay, .simulation-page .stock { background: #f6f6f0; border-color: #bfc8bc; border-radius: 0; }
@@ -368,7 +370,11 @@ a, button { -webkit-tap-highlight-color: transparent; }
   .footer-inner span { width: 100%; }
   .simulation-page .play-header { grid-template-columns: 1fr; padding: 1.5rem 1.15rem; gap: .6rem; }
   .simulation-page .play-header h1 { font-size: clamp(2.45rem, 9vw, 3.5rem); }
-  .simulation-page .mission-tab { white-space: normal; text-align: left; max-width: 15rem; }
+  .simulation-page .mission-menu ul { display:grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap:.35rem .65rem; overflow:visible; }
+  .simulation-page .mission-menu li { min-width:0; }
+  .simulation-page .mission-tab { width:100%; height:100%; white-space:normal; text-align:left; max-width:none; min-height:48px; padding:.55rem .5rem; border-bottom:0; border-left:2px solid transparent; font-size:.86rem; }
+  .simulation-page .mission-tab[aria-current] { border-bottom:0; border-left-color:#285440; padding-left:.6rem; }
+  .simulation-page .mission-tab > span:last-child:not(:first-child) { font-size:.75rem; }
   .simulation-page .brief { display: block; }
   .simulation-page .brief > .control { margin-top: .7rem; }
 }

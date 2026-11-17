@@ -1,6 +1,9 @@
 import { chromium } from "playwright";
 import assert from "node:assert/strict";
 import fs from "node:fs";
+import os from "node:os";
+import path from "node:path";
+import { pathToFileURL } from "node:url";
 
 const browser = await chromium.launch({headless:true, args:["--no-sandbox"]});
 const base = "http://127.0.0.1:8765";
@@ -75,6 +78,24 @@ try {
  await page.keyboard.press("Tab");
  assert.equal(await page.evaluate(()=>document.activeElement.className),"skip","Skip link must be first in tab order");
  await kb.close();
+ // Device Division's single HTML file must still run without the assets folder.
+ const offlineDir=fs.mkdtempSync(path.join(os.tmpdir(),"unit-one-offline-"));
+ try {
+   const standalone=path.join(offlineDir,"device.html");
+   fs.copyFileSync("games/device-division.html",standalone);
+   const offlineContext=await browser.newContext({viewport:{width:390,height:844}});
+   const offlinePage=await offlineContext.newPage();
+   const offlineErrors=[];
+   offlinePage.on("pageerror",e=>offlineErrors.push(e.message));
+   await offlinePage.goto(pathToFileURL(standalone).href,{waitUntil:"load"});
+   assert.ok(await offlinePage.locator(".choice").count()>=9,"Offline Device Division did not render choices");
+   const offlineStyles=await offlinePage.locator("body").evaluate(el=>getComputedStyle(el).backgroundColor);
+   assert.notEqual(offlineStyles,"rgba(0, 0, 0, 0)","Offline stylesheet was lost");
+   await offlinePage.locator(".choice").first().click();
+   assert.ok(await offlinePage.locator(".feedback").count()>0,"Offline choice did not respond");
+   assert.equal(offlineErrors.length,0,"Offline script errors: "+offlineErrors.join("; "));
+   await offlineContext.close();
+ } finally { fs.rmSync(offlineDir,{recursive:true,force:true}); }
  console.log("PASS design smoke: "+findings.length+" route×viewport checks; homepage, Device Division and six simulations.");
  console.log(JSON.stringify({sizes:widths,checked:findings.length,examples:findings.filter(x=>x.route.includes("device")&&x.width===390)},null,2));
 }catch(e){failures++;console.error("FAIL design smoke:",e.stack||e);}
