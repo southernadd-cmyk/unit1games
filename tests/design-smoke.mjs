@@ -34,6 +34,11 @@ async function visit(context,route,width,label) {
   assert.ok(layout.css,"Missing stylesheet "+route);
   assert.ok(layout.image,"Hero image failed "+route);
   assert.ok(layout.font.includes("Instrument Sans"),"Font mismatch "+route+" "+layout.font);
+  if(layout.pageWidth>layout.viewportWidth+2){
+    await page.screenshot({path:"test-results/screenshots/overflow-"+label+"-"+width+".png",fullPage:true});
+    const offenders=await page.evaluate(()=>Array.from(document.querySelectorAll("body *")).map(el=>({el,box:el.getBoundingClientRect()})).filter(o=>o.box.right>innerWidth+2).slice(0,12).map(o=>({tag:o.el.tagName,cls:String(o.el.className).slice(0,65),text:o.el.textContent?.trim().slice(0,65),right:Math.round(o.box.right)})));
+    console.error("OVERFLOW_DIAGNOSTIC",route,width,JSON.stringify(offenders));
+  }
   assert.ok(layout.pageWidth<=layout.viewportWidth+2,"Document overflow "+route+" "+width+" : "+layout.pageWidth+" > "+layout.viewportWidth);
   assert.ok(layout.interactive>2,"Missing interactive elements "+route);
   assert.equal(errors.length,0,"JS page errors in "+route+": "+errors.join("; "));
