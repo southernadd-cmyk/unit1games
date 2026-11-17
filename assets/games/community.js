@@ -93,7 +93,6 @@
   function view(mission, draft) {
     const used = totals(draft);
     const task = mission.tasks[draft.active];
-    const taskTabs = mission.tasks.map((entry,i) => control("task", entry.name, {index:i}, {pressed: i===draft.active})).join("");
     const services = mission.stock.map(id => {
       const product = products[id];
       return '<div class="stock"><strong>' + h(product.name) + "</strong><p>" + h(product.note) + "</p>" +
@@ -103,11 +102,13 @@
     const levels = task.access.map((need, role) =>
       [h(roles[role]), h(permissions[need]), control("access", permissions[draft.acl[draft.active][role]], {role}, {accessibleLabel: roles[role] + " · " + permissions[draft.acl[draft.active][role]]})]
     );
-    const cards = mission.tasks.map((entry,i) => '<div class="bay ' + (i===draft.active ? "active" : "") + '"><b>' +
-      h(entry.name) + "</b><p>" + h(products[draft.systems[i]]?.name ?? "Awaiting deployment") + "</p></div>").join("");
+    const serviceRows = mission.tasks.map((entry, index) => [
+      control("task", entry.name, {index}, {pressed: index===draft.active}),
+      h(products[draft.systems[index]]?.name ?? "Awaiting deployment")
+    ]);
     return signals([["Spend",pounds(used.cost) + " / " + pounds(mission.budget),used.cost>mission.budget?"fault":""],
       ["Staff rota", used.hours + " / " + mission.hours + " hours",used.hours>mission.hours?"fault":""]]) +
-      panel("Services board",'<div class="bay-grid">' + cards + '</div><div class="controls">' + taskTabs + "</div>", "service-board") +
+      panel("Services", table(["Service","Deployment"],serviceRows,"Services"), "service-board") +
       '<div class="deployment-layout">' +
       panel(task.name, "<p>" + h(task.need) + "</p><p>Peak load · " + task.load + "</p>" +
         '<div class="stock-grid">' + services + "</div>", "service-catalogue") +

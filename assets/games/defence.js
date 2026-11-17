@@ -157,16 +157,19 @@
 
   function view(incident,draft) {
     const entry=incident.assets.find(asset=>asset.id===draft.activeAsset);
-    const cards=incident.assets.map(asset=>'<div class="stock '+(asset.id===draft.activeAsset?"active":"")+'"><b>'+
-      h(asset.name)+'</b><p>'+h(incident.status(draft,asset.id))+'</p>'+
-      control("inspect","Inspect",{id:asset.id},{pressed:asset.id===draft.activeAsset})+'</div>').join("");
+    const assetRows=incident.assets.map(asset=>[
+      control("inspect",asset.name,{id:asset.id},{pressed:asset.id===draft.activeAsset}),
+      h(incident.status(draft,asset.id))
+    ]);
     const moves=entry.controls.map(([id,label,minutes])=>control("command",label+" · "+minutes+" min",{id})).join("");
     const logs=draft.log.length?'<ol class="event-log">'+draft.log.slice().reverse().map(([time,event])=>
       '<li><time>+'+time+' min</time><span>'+h(event)+'</span></li>').join("")+'</ol>':'<p>No actions recorded.</p>';
     return signals([["Elapsed",draft.clock+" min"],...incident.metrics(draft)])+
-      panel("Systems and evidence",'<div class="stock-grid">'+cards+'</div>',"asset-register")+
-      '<div class="incident-layout">'+panel(entry.name,'<p>'+h(entry.evidence)+'</p><div class="controls">'+moves+'</div>',"incident-evidence")+
-      panel("Activity log",logs,"incident-log")+"</div>"+
+      '<div class="incident-layout">'+
+      panel("Systems and evidence",table(["Asset","Status"],assetRows,"Systems and evidence"),"asset-register")+
+      '<div class="incident-detail">'+
+      panel(entry.name,'<p>'+h(entry.evidence)+'</p><div class="controls">'+moves+'</div>',"incident-evidence")+
+      panel("Activity log",logs,"incident-log")+"</div></div>"+
       '<div class="controls">'+control("handover","Run handover checks",{},{main:true})+'</div>'+
       (draft.report?panel("Handover",checklist(draft.report)):"");
   }

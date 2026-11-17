@@ -106,9 +106,9 @@
   function view(mission,draft) {
     const [,title,,pool]=mission.fields[draft.active];
     const fitted=draft.rules[draft.active];
-    const slots=mission.fields.map(([key,label],i)=>'<div class="bay '+(i===draft.active?"active":"")+'" data-drop="'+key+
-      '"><b>'+h(label)+'</b><p>'+h(draft.rules[i].map(id=>rules[id].name).join(" + ") || "No validation rules")+'</p>'+
-      control("field","Edit rules",{index:i},{accessibleLabel:"Edit rules for "+label})+'</div>').join("");
+    const fieldRows=mission.fields.map(([key,label],index)=>'<div class="field-row" data-drop="'+key+'">'+
+      control("field",label,{index},{pressed:index===draft.active,accessibleLabel:"Edit rules for "+label})+
+      '<p>'+h(draft.rules[index].map(id=>rules[id].name).join(" + ") || "No rules fitted")+'</p></div>').join("");
     const rulePanel=pool.map(id=>'<div class="stock"><b>'+h(rules[id].name)+'</b><p>'+h(rules[id].note)+'</p>'+
       control("rule",fitted.includes(id)?"Remove":"Attach",{id},{pressed:fitted.includes(id),drag:true,accessibleLabel:(fitted.includes(id)?"Remove ":"Attach ")+rules[id].name})+'</div>').join("");
     const preview=mission.fields.map(([key,label,mode],index)=>{
@@ -131,7 +131,7 @@
       ]),"Form tests")+(mission.formats?checklist([[readyFormat(draft),"Data and interface review",
         "The survey needs fresh primary data, labels and written error prompts."]]):"")):"";
     return '<div class="validation-layout"><div class="validation-builder">'+
-      panel("Form builder",'<div class="bay-grid">'+slots+"</div>","field-board")+
+      panel("Form fields",'<div class="field-list">'+fieldRows+"</div>","field-board")+
       panel("Rule tray · "+title,'<div class="stock-grid">'+rulePanel+'</div>',"rule-tray")+format+"</div>"+
       panel("Live form preview",'<p>Try your own values using the rules you fitted.</p><div class="fields">'+preview+
         '</div><div class="controls">'+control("attempt","Try submission")+'</div>'+

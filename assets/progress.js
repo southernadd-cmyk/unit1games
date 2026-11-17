@@ -28,9 +28,8 @@ const unitProgress = {
 for (const card of document.querySelectorAll("[data-game-card]")) {
   const completed = unitProgress.read(card.dataset.gameCard).length;
   if (completed) {
-    const indicator = document.createElement("span");
-    indicator.className = "progress-chip";
-    indicator.textContent = completed + " cleared";
-    card.querySelector(".card-meta").append(" ", indicator);
+    const count = card.querySelector(".activity-count");
+    const total = Number(count.dataset.briefs);
+    count.textContent = Math.min(completed, total) + " of " + total + " done";
   }
 }
