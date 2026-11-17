@@ -1,30 +1,36 @@
 "use strict";
 
 const unitProgress = {
-  key: "btec-unit1-game-completions-v1",
-  read() {
+  key: "unit1-lab-missions-v2",
+  all() {
     try {
       const saved = JSON.parse(localStorage.getItem(this.key));
-      return Array.isArray(saved) ? saved : [];
+      return saved && typeof saved === "object" ? saved : {};
     } catch {
-      return [];
+      return {};
     }
   },
-  finish(game) {
+  read(game) {
+    const completed = this.all()[game];
+    return Array.isArray(completed) ? completed : [];
+  },
+  finish(game, mission) {
     try {
-      localStorage.setItem(this.key, JSON.stringify([...new Set([...this.read(), game])]));
+      const saved = this.all();
+      saved[game] = [...new Set([...this.read(game), mission])];
+      localStorage.setItem(this.key, JSON.stringify(saved));
     } catch {
-      // Players can complete games when browser storage is unavailable.
+      // Progress remains visible for the current tab if storage is unavailable.
     }
   }
 };
 
-const unitFinishedGames = unitProgress.read();
 for (const card of document.querySelectorAll("[data-game-card]")) {
-  if (unitFinishedGames.includes(card.dataset.gameCard)) {
+  const completed = unitProgress.read(card.dataset.gameCard).length;
+  if (completed) {
     const indicator = document.createElement("span");
-    indicator.className = "completion-mark";
-    indicator.textContent = "Completed";
+    indicator.className = "progress-chip";
+    indicator.textContent = completed + " cleared";
     card.querySelector(".card-meta").append(" ", indicator);
   }
 }

@@ -1,25 +1,25 @@
 # Unit 1 Games
 
-Browser games for Pearson BTEC Level 3 AAQ Information Technology, Unit 1 (Information Technology Systems). Students can play independently on a desktop or laptop without creating an account.
+[Play Unit 1 Games](https://southernadd-cmyk.github.io/unit1games/)
 
-[Open Unit 1 Games](https://southernadd-cmyk.github.io/unit1games/)
+Independent browser practice for Pearson BTEC Level 3 AAQ IT, Unit 1 (Information Technology Systems). Each game has briefs with simulated systems, evidence or work products students can manipulate and test.
 
-| Topic | Game | Activity |
+| Topic | Game | What students do |
 | --- | --- | --- |
-| A1 Digital devices | [Device Division](games/device-division.html) | Identify digital devices, select equipment for clients, and respond to incidents. |
-| A2–A5 Devices, software and systems | [Systems Workshop](games/play.html?game=systems) | Match peripherals, storage and software to workplace requirements and budgets. Includes a flowchart job for A1.3. |
-| B Transmitting data | [Packet Route](games/play.html?game=network) | Build network routes around practical bandwidth, latency, availability and protocol constraints. |
-| C Operating online | [Community Shift](games/play.html?game=online) | Choose cloud and remote-working services and manage an online community. |
-| D Protecting data and information | [Defence Desk](games/play.html?game=security) | Investigate fictional workplace incidents and select defensive responses. |
-| E Impact of IT systems | [Service Launch](games/play.html?game=services) | Configure input checks and see how validation and verification behave on sample data. |
-| F Issues | [Policy Files](games/play.html?game=policy) | Apply privacy, accessibility, environmental, behaviour and legal principles to case files. |
+| A1 Digital devices | [Device Division](games/device-division.html) | Work through five rounds on devices, client dispatch, procurement and incidents. |
+| A1.3–A5 Devices and systems | [Systems Workshop](games/play.html?game=systems) | Fit hardware and software and power up six builds. Tests include USB capacity, read speeds, real-time response, migration and flowchart traces. |
+| B Transmitting data | [Packet Route](games/play.html?game=network) | Build routes for simultaneous streams on five networks. Compare capacity, latency, failover, compression and protocols. |
+| C Operating online | [Community Shift](games/play.html?game=online) | Deploy three services per shift, set four roles’ permissions and rehearse simulated demand and moderation. |
+| D Protecting data | [Defence Desk](games/play.html?game=security) | Investigate five incidents. Contain exposure, restore and verify services, and protect essential access while the incident clock advances. |
+| E Impact of IT systems | [Service Launch](games/play.html?game=services) | Fit rules to forms, submit your own sample input and run preset boundary, validation and verification tests. |
+| F Ethics and law | [Policy Files](games/play.html?game=policy) | Edit seven workplace records, including a public export, a reuse plan and a testing authorisation. |
 
-Use individual games for a lesson or several for independent revision. Use the debrief in each new game or the written briefs in Device Division to collect evidence of students' reasoning. Scenarios practise selected parts of each topic. See the [Pearson specification](https://qualifications.pearson.com/content/dam/pdf/btec-aaqs/information-technology/2025/specification-and-sample-assessments/btec-level-3-national-ext-cert-in-it-aaq-spec.pdf) for the full assessment content.
+Each new brief ends with a written prompt for the class notebook. Games practise selected parts of the topic. See the [Pearson specification](https://qualifications.pearson.com/content/dam/pdf/btec-aaqs/information-technology/2025/specification-and-sample-assessments/btec-level-3-national-ext-cert-in-it-aaq-spec.pdf) for the full assessment content.
 
-## Run locally
+## Run offline
 
-Download the [source ZIP](https://github.com/southernadd-cmyk/unit1games/archive/refs/heads/main.zip), extract it, and open the root index.html in Edge or Chrome. Keep the assets and games folders in place. The games also run from any static web server. Completion indicators use browser storage where available.
+Download the [source ZIP](https://github.com/southernadd-cmyk/unit1games/archive/refs/heads/main.zip), extract it and open index.html in Edge or Chrome. Keep the assets and games folders in place. There is no installation, sign-in or remote asset dependency. Completed briefs are recorded in this browser where local storage is available.
 
-## Edit a game
+## Edit or publish
 
-The six games use the shared player in assets/play.js and authored prompts, choices, feedback and test cases in assets/scenarios.js. Device Division is a self-contained HTML game. The site uses no package dependencies or build step.
+The six simulation modules are in assets/games/. Each defines its briefs, state changes, workspace and checks. The player in assets/play.js provides the brief menu and interaction wiring. Device Division is a standalone HTML game. The Pages workflow publishes the static assets from main.

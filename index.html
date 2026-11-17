@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Free browser games for BTEC Level 3 Information Technology, Unit 1. Play through workplace scenarios across the Pearson AAQ specification.">
-  <meta name="theme-color" content="#211a3a">
+  <meta name="description" content="Playable workplace simulations for Pearson BTEC Level 3 IT Unit 1. Build IT systems, route networks, manage online services and respond to incidents.">
+  <meta name="theme-color" content="#18242b">
   <title>Unit 1 Games | BTEC Level 3 IT</title>
   <link rel="stylesheet" href="assets/styles.css">
   <script src="assets/progress.js" defer></script>
 </head>
 <body>
-  <a class="skip" href="#main">Skip to games</a>
+  <a class="skip" href="#games">Skip to games</a>
   <header class="site-header">
     <div class="wrap masthead">
       <a class="brand" href="index.html"><span class="brand-icon" aria-hidden="true">U1</span> Unit 1 Games</a>
@@ -20,92 +20,88 @@
       </nav>
     </div>
   </header>
-  <main id="main" class="wrap">
+  <main class="wrap">
     <section class="hero">
-      <div>
-        <p class="eyebrow">BTEC Level 3 IT · Pearson AAQ</p>
-        <h1>Information<br class="desktop-break"> Technology Systems</h1>
-        <p class="hero-copy">Choose a client’s equipment, get a network back online or take the next security incident. Pick a game for the topic you’re studying.</p>
-        <a class="button hero-button" href="#games">Choose a game <span aria-hidden="true">↓</span></a>
+      <div class="hero-main">
+        <p class="mono">Pearson BTEC Level 3 IT · AAQ</p>
+        <h1>Information Technology Systems</h1>
+        <p>Build a workstation, keep a festival online, route simultaneous traffic and recover a booking service. Each game gives you a job to finish and tests the system you leave behind.</p>
+        <a class="control primary" href="#games">Choose a game <span aria-hidden="true">↓</span></a>
       </div>
-      <div class="hero-topics">
-        <p>Jump to a topic</p>
-        <div class="topic-links">
-          <a href="#area-a"><b>A</b> Devices</a>
-          <a href="#area-b"><b>B</b> Networks</a>
-          <a href="#area-c"><b>C</b> Online systems</a>
-          <a href="#area-d"><b>D</b> Data protection</a>
-          <a href="#area-e"><b>E</b> Online services</a>
-          <a href="#area-f"><b>F</b> Ethics and law</a>
-        </div>
-      </div>
+      <nav class="topic-nav" aria-label="Unit 1 topics">
+        <p class="mono">Unit 1 topics</p>
+        <a href="#area-a"><span>A</span> Digital devices and systems</a>
+        <a href="#area-b"><span>B</span> Transmitting data</a>
+        <a href="#area-c"><span>C</span> Operating online</a>
+        <a href="#area-d"><span>D</span> Protecting data</a>
+        <a href="#area-e"><span>E</span> Impact of IT systems</a>
+        <a href="#area-f"><span>F</span> Ethics and law</a>
+      </nav>
     </section>
     <section id="games" aria-labelledby="games-title" class="section">
       <div class="section-heading">
-        <h2 id="games-title">Choose a game</h2>
-        <p class="muted">Play in your browser. No account or installation.</p>
+        <h2 id="games-title">The games</h2>
+        <p>Play in your browser. No account or installation.</p>
       </div>
       <div class="game-grid">
         <article class="game-card area-a" id="area-a">
-          <p class="game-topic">A1 · Digital devices</p>
+          <p class="mono">A1 · Digital devices</p>
           <h3><a class="card-link" href="games/device-division.html">Device Division <span aria-hidden="true">↗</span></a></h3>
-          <p>Dispatch devices to clients, handle breakdowns and put together equipment bids within a budget.</p>
-          <p class="card-meta">Five rounds · 90 min</p>
+          <p>Dispatch devices to clients, handle breakdowns and submit equipment bids within a budget.</p>
+          <p class="card-meta">5 rounds · about 90 minutes</p>
         </article>
         <article class="game-card area-a" data-game-card="systems">
-          <p class="game-topic">A2–A5 · Devices, software and systems</p>
+          <p class="mono">A1.3–A5 · Devices and systems</p>
           <h3><a class="card-link" href="games/play.html?game=systems">Systems Workshop <span aria-hidden="true">↗</span></a></h3>
-          <p>Fit storage, software and assistive tools to six workplace briefs. Test your designs against the client's needs.</p>
-          <p class="card-meta">Six jobs · 15–25 min</p>
+          <p>Fit components and run the bench tests. Check USB ports, speed bottlenecks, controller delay and a flowchart’s two paths.</p>
+          <p class="card-meta">6 builds · equipment and compatibility</p>
         </article>
         <article class="game-card area-b" id="area-b" data-game-card="network">
-          <p class="game-topic">B · Transmitting data</p>
+          <p class="mono">B · Transmitting data</p>
           <h3><a class="card-link" href="games/play.html?game=network">Packet Route <span aria-hidden="true">↗</span></a></h3>
-          <p>Trace a path across the network. Reroute traffic when a link fails and meet the service’s speed and security needs.</p>
-          <p class="card-meta">Six puzzles · 15–20 min</p>
+          <p>Route two streams on the map. Recover from a broken link, compress a live feed and resolve shared bottlenecks.</p>
+          <p class="card-meta">5 networks · traffic and failover</p>
         </article>
         <article class="game-card area-c" id="area-c" data-game-card="online">
-          <p class="game-topic">C · Operating online</p>
+          <p class="mono">C · Operating online</p>
           <h3><a class="card-link" href="games/play.html?game=online">Community Shift <span aria-hidden="true">↗</span></a></h3>
-          <p>Get a festival team working online, then run its public community. Your decisions affect budget, availability and trust.</p>
-          <p class="card-meta">Eight decisions · 15–20 min</p>
+          <p>Deploy services, assign access to four roles and staff a moderation queue. Rehearse a shift to see where your setup fails.</p>
+          <p class="card-meta">3 shifts · cloud services and permissions</p>
         </article>
         <article class="game-card area-d" id="area-d" data-game-card="security">
-          <p class="game-topic">D · Protecting data and information</p>
+          <p class="mono">D · Protecting data</p>
           <h3><a class="card-link" href="games/play.html?game=security">Defence Desk <span aria-hidden="true">↗</span></a></h3>
-          <p>Investigate incident reports, identify the threat and choose a response and a control to reduce future risk.</p>
-          <p class="card-meta">Six incidents · 15–20 min</p>
+          <p>Inspect affected systems, act on the right asset and verify a clean restore. Every operation takes time.</p>
+          <p class="card-meta">5 incidents · containment and recovery</p>
         </article>
         <article class="game-card area-e" id="area-e" data-game-card="services">
-          <p class="game-topic">E · Impact of IT systems</p>
+          <p class="mono">E · Impact of IT systems</p>
           <h3><a class="card-link" href="games/play.html?game=services">Service Launch <span aria-hidden="true">↗</span></a></h3>
-          <p>Build checks into online forms and run test cases. Find which rules catch mistakes and which mistakes slip through.</p>
-          <p class="card-meta">Five releases · 15–20 min</p>
+          <p>Stack rules in a form builder, try your own records and run boundary tests before approving the release.</p>
+          <p class="card-meta">4 forms · validation and verification</p>
         </article>
         <article class="game-card area-f" id="area-f" data-game-card="policy">
-          <p class="game-topic">F · Moral, ethical and legal issues</p>
+          <p class="mono">F · Ethics and law</p>
           <h3><a class="card-link" href="games/play.html?game=policy">Policy Files <span aria-hidden="true">↗</span></a></h3>
-          <p>Read workplace evidence, decide which rule or ethical concern applies, then recommend what the organisation should do.</p>
-          <p class="card-meta">Eight cases · 20–25 min</p>
+          <p>Redact a public export, allocate licences and route retired equipment. Review the effect on the organisation and its users.</p>
+          <p class="card-meta">7 files · workplace decisions</p>
         </article>
       </div>
     </section>
     <section id="teachers" class="teacher section" aria-labelledby="teacher-title">
       <div>
-        <p class="eyebrow">Classroom use</p>
         <h2 id="teacher-title">For teachers</h2>
-        <p>Use one game for a topic recap, or assign several games for independent revision. Each new game ends with a short written prompt students can answer in their class notebook. Device Division contains its own written briefs.</p>
+        <p>Share a game link or let students choose a brief. Each completed brief includes a written task for your class notebook. Progress is saved in the current browser.</p>
       </div>
       <div>
         <h3>Play offline</h3>
-        <p>If the site is filtered, download the ZIP, extract it and open <code>index.html</code> in Edge or Chrome. Keep the folders together.</p>
-        <div class="teacher-links">
-          <a href="https://github.com/southernadd-cmyk/unit1games/archive/refs/heads/main.zip">Download ZIP ↓</a>
-          <a href="https://qualifications.pearson.com/content/dam/pdf/btec-aaqs/information-technology/2025/specification-and-sample-assessments/btec-level-3-national-ext-cert-in-it-aaq-spec.pdf">Pearson specification ↗</a>
+        <p>Download the ZIP, extract it and open <code>index.html</code> in Edge or Chrome. Keep the folders together.</p>
+        <div class="controls">
+          <a class="control" href="https://github.com/southernadd-cmyk/unit1games/archive/refs/heads/main.zip">Download ZIP ↓</a>
+          <a class="control" href="https://qualifications.pearson.com/content/dam/pdf/btec-aaqs/information-technology/2025/specification-and-sample-assessments/btec-level-3-national-ext-cert-in-it-aaq-spec.pdf">Pearson specification ↗</a>
         </div>
       </div>
     </section>
   </main>
-  <footer class="site-footer"><div class="wrap">Unit 1 Games · Independent practice for Pearson BTEC Level 3 IT</div></footer>
 </body>
 </html>
